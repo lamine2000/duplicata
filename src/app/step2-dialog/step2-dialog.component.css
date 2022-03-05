@@ -1,0 +1,15 @@
+.fields{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+hr{
+  width: 30%;
+}
+
+img{
+  width: 300px;
+  height: 300px;
+}

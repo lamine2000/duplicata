@@ -1,0 +1,21 @@
+{
+  "targets": {
+    "demande-duplicata-esp": {
+      "hosting": {
+        "duplicata": [
+          "demande-duplicata-esp"
+        ]
+      }
+    },
+    "demande-duplicata-esp": {
+      "hosting": {
+        "duplicata": [
+          "demande-duplicata-esp"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "demande-duplicata-esp"
+  }
+}

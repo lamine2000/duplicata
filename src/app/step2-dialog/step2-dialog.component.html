@@ -1,0 +1,34 @@
+<h1 mat-dialog-title>Informations</h1>
+
+<div class="fields" mat-dialog-content>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Année d'obtention</mat-label>
+    <input matInput maxLength="4" placeholder="2010" required>
+    <mat-icon matSuffix>date_range</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>N° carte étudiant</mat-label>
+    <input #ipt matInput placeholder="201707ABC" maxLength="9" required>
+    <mat-icon matSuffix>perm_identity</mat-icon>
+    <mat-hint align="end">{{ipt.value?.length || 0}}/9</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field appearance="outline">
+    <mat-label>Adresse mail</mat-label>
+    <input matInput placeholder="lamine@esp.sn" required>
+    <mat-icon matSuffix>mail_outline</mat-icon>
+  </mat-form-field>
+</div>
+
+<hr>
+
+<h1 mat-dialog-title>Paiement (WAVE)</h1>
+
+<img src="../../assets/qrcode.png" alt="qrcode">
+
+<div mat-dialog-actions>
+  <button mat-button (click)="donothing()">No Thanks</button>
+  <button mat-button [mat-dialog-close]="false" cdkFocusInitial>Ok</button>
+</div>
