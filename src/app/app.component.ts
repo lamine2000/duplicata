@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'duplicata';
   duplicata_types: string[] = ['Certificat d\'inscription', 'Relevé de notes', 'Carte d\'étudiant', 'Attestation de passage', 'Attestation de réussite'];
   duplicata_prices: number[] = [5000, 5000, 10000, 5000, 10000];
+  duplicata_commission: number[] = [250, 250, 500, 250, 500]
   chosen_count: number[] = [0, 0, 0, 0, 0];
 
   horizontalPosition: MatSnackBarHorizontalPosition = 'right';
@@ -34,6 +35,13 @@ export class AppComponent {
     let sum = 0;
     for(let i = 0; i < this.chosen_count.length; i++)
       sum += this.chosen_count[i] * this.duplicata_prices[i];
+    return sum;
+  }
+
+  toPayCommission(): number{
+    let sum = 0;
+    for(let i = 0; i < this.chosen_count.length; i++)
+      sum += this.chosen_count[i] * this.duplicata_commission[i];
     return sum;
   }
 

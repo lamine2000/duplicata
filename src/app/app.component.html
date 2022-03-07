@@ -22,14 +22,14 @@
           <mat-card-title>
             {{name}}
             <span class="count" *ngIf="chosen_count[index] > 0">
-          <button mat-icon-button matSuffix matBadge="{{chosen_count[index]}}" matBadgePosition="before" matBadgeColor="accent">
+          <button mat-icon-button matSuffix matBadge="{{chosen_count[index]}}" matBadgePosition="after" matBadgeColor="accent">
             <mat-icon>shopping_cart</mat-icon>
           </button>
         </span>
           </mat-card-title>
           <mat-card-subtitle>*Obtention sous 48h</mat-card-subtitle>
           <mat-card-content>
-            <h2 class="montant">{{duplicata_prices[index]}} CFA / exemplaire</h2>
+            <h2 class="montant">{{duplicata_prices[index]}} (+{{duplicata_commission[index]}}) CFA / exemplaire</h2>
 
           </mat-card-content>
           <mat-card-actions>
@@ -50,14 +50,14 @@
           <mat-card-title>
             {{name}}
             <span class="count" *ngIf="chosen_count[index] > 0">
-          <button mat-icon-button matSuffix matBadge="{{chosen_count[index]}}" matBadgePosition="before" matBadgeColor="accent">
+          <button mat-icon-button matSuffix matBadge="{{chosen_count[index]}}" matBadgePosition="after" matBadgeColor="accent">
             <mat-icon>shopping_cart</mat-icon>
           </button>
         </span>
           </mat-card-title>
           <mat-card-subtitle>*Obtention sous 48h</mat-card-subtitle>
           <mat-card-content>
-            <h2 class="montant">{{duplicata_prices[index]}} CFA / exemplaire</h2>
+            <h2 class="montant">{{duplicata_prices[index]}} (+{{duplicata_commission[index]}}) CFA / exemplaire</h2>
           </mat-card-content>
           <mat-card-actions>
             <button class="plus-minus" mat-fab color="warn" (click)="removeOne(index)">
@@ -74,7 +74,7 @@
     <div class="submit-container">
       <button class="submit" mat-raised-button [disabled]="toPay() == 0" (click)="submit()">
         Valider
-        <span *ngIf="toPay() > 0">({{toPay()}} CFA)</span>
+        <span *ngIf="toPay() > 0">{{toPay()}} (+{{toPayCommission()}}) CFA</span>
         <mat-icon matSuffix>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;payment</mat-icon>
       </button>
     </div>
